@@ -56,7 +56,7 @@ function writePassword() {
     if (numbersConfirm){
       // add numbers into the combined array
     }else{
-      
+
     }
   }
 
