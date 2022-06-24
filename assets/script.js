@@ -18,17 +18,20 @@ var numbers = ["1","2","3","4","5","6","7","8","9","0"]
 
 function generatePassword() {
 
-  //   do password generating things
+  //Variable created to concate confirmed characters
   var passwordArray= []
+
+  //Empty string variable created for final array/password to be displayed
   var generatedPassword = ""
   
-  // var generatePassword = "This is the text for a generated password"
   var length = parseInt(window.prompt("How many characters would you like your password to contain (must be between 8-128)?"))
   console.log("User chose " + length + " characters.");
   if (length < 8 || length > 128) {
-    alert("Password must be between 8-128 characters!")
+    alert("Password must be between 8-128 characters!");
     generatePassword();
-  };
+  }else{
+    alert("Chose your inputs.")
+    }
 
   var symbolsConfirm = window.confirm("Would you like to use symbols?")
   if (symbolsConfirm){
@@ -63,41 +66,33 @@ function generatePassword() {
     generatePassword();
   }else{
     // confirm the character arrays were added to passwordArray
-    console.log(passwordArray)
+    console.log("Available confirmed characters for selection " + passwordArray);
   };
 
   // generate a password from the user parameters above
-
-  
   for (var i = 0; i < length; i++) {
     // code to generate password character by character
-    // use a random number Math.floor(Math.random() * passwordArray.length) and
-    console.log(i);
-
+    // linking variable to random loop
     var randomIndex =  Math.floor(Math.random() * passwordArray.length);
-
-
-
-      
-      // add the character at that number to the generatedPassword
+    // Linking previously created empty string variable to newly created
+    // random array
     generatedPassword += passwordArray [randomIndex]
-
-      
+    console.log(generatedPassword);
     };
-  // document.querySelector("#password").innerHTML += passwordArray
+  // calling final password
   return  generatedPassword
 };
 
 
 // Write password to the #password input
 function writePassword() {
+  // link return from generatePassword function to new varible
   var password = generatePassword();
-
+  // create variable for text area object id=password
   var passwordText = document.querySelector("#password");
-
+  // console.dir(passwordText); value is the produced password
+  // therefore set the passwordText value to equal password
   passwordText.value = password;
-
 };
 
-// generateBtn.addEventListener("click", writePassword);
 
