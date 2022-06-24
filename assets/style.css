@@ -104,11 +104,11 @@ button[disabled] {
   border: none;
   display: block;
   width: 100%;
-  padding-top: 15px;
+  padding-top: 45px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 85px;
-  font-size: 1.2rem;
+  padding-bottom: 95pxpx;
+  font-size: 1.5rem;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -116,6 +116,8 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  color: hsl(360, 91%, 36%);
+  font-weight:bold;
 }
 
 @media (max-width: 690px) {
