@@ -1,13 +1,9 @@
-// Assignment code here
-
-
-// Get references to the #generate element
-// generat password function to generate
-
 // create a listener event
 var generateBtn = document.querySelector("#generate");
-generateBtn.addEventListener("click", generatePassword);
-    
+// generateBtn.addEventListener("click", generatePassword);
+generateBtn.addEventListener("click", writePassword);
+
+// Get references to the #generate element
 var symbols = ["`", "~", "!", "@", "#", "$","%", "^", "&", "*", "(", ")", "_", "-", "=", "+", "{", "}", "|", ":", ";", "'","<",">","?",]
   console.log(symbols.length + " -- " + symbols)
 
@@ -24,7 +20,7 @@ function generatePassword() {
 
   //   do password generating things
   var passwordArray= []
-  var generatedPassword = ""
+  // var generatedPassword = ""
   
   // var generatePassword = "This is the text for a generated password"
   var length = parseInt(window.prompt("How many characters would you like your password to contain (must be between 8-128)?"))
@@ -32,46 +28,43 @@ function generatePassword() {
   if (length < 8 || length > 128) {
     alert("Password must be between 8-128 characters!")
     generatePassword();
-  }
+  };
 
   var symbolsConfirm = window.confirm("Would you like to use symbols?")
   if (symbolsConfirm){
     // add symbols into the combined array
     passwordArray = passwordArray.concat(symbols)
     console.log("User confirmed symbols.")
-    // console.log(passwordArray)
-  }
+  };
 
   var upperConfirm = window.confirm("Would you like to use uppercase letters?")
   if (upperConfirm){
     // add upper case into the combined array
     passwordArray=passwordArray.concat(upperCase)
     console.log("User confirmed Uppercase letters.")
-    // console.log(passwordArray)
-  }
+  };
 
   var lowerConfirm =window.confirm("Would you like to use lowercase letters?")
   if (lowerConfirm){
     // add lower case into the combined array
     passwordArray = passwordArray.concat(lowerCase)
     console.log("User confirmed Lowercase letters.")
-    // console.log(passwordArray)
-  }
+  };
 
   var numbersConfirm = window.confirm("Would you like to use numbers?")
   if (numbersConfirm){
     // add numbers into the combined array
     passwordArray = passwordArray.concat(numbers)
     console.log("User confirmed numbers.")
-    // console.log(passwordArray)
-  }
+  };
     
   if (passwordArray.length === 0) {
     alert("You must enter at least one value.")
     generatePassword();
   }else{
+    // confirm the character arrays were added to passwordArray
     console.log(passwordArray)
-  }
+  };
 
   // generate a password from the user parameters above
   for (var i = 0; i < length; i++) {
@@ -82,14 +75,12 @@ function generatePassword() {
       // add the character at that number to the generatedPassword
     // var generatedPassword += passwordArray
 
-      console.log(passwordArray)
       
-    }
-    
-  return  generatedPassword ()
-}
+    };
+  // document.querySelector("#password").innerHTML += passwordArray
+  // return  generatePassword ()
+};
 
-// generatePassword();
 
 // Write password to the #password input
 function writePassword() {
@@ -98,9 +89,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  generateBtn.addEventListener("click", );
-}
 
+};
 
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
 
