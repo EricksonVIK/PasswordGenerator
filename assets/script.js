@@ -20,7 +20,7 @@ function generatePassword() {
 
   //   do password generating things
   var passwordArray= []
-  // var generatedPassword = ""
+  var generatedPassword = ""
   
   // var generatePassword = "This is the text for a generated password"
   var length = parseInt(window.prompt("How many characters would you like your password to contain (must be between 8-128)?"))
@@ -67,18 +67,25 @@ function generatePassword() {
   };
 
   // generate a password from the user parameters above
+
+  
   for (var i = 0; i < length; i++) {
     // code to generate password character by character
     // use a random number Math.floor(Math.random() * passwordArray.length) and
-    return Math.floor(Math.random() * passwordArray.length);
+    console.log(i);
+
+    var randomIndex =  Math.floor(Math.random() * passwordArray.length);
+
+
+
       
       // add the character at that number to the generatedPassword
-    // var generatedPassword += passwordArray
+    generatedPassword += passwordArray [randomIndex]
 
       
     };
   // document.querySelector("#password").innerHTML += passwordArray
-  // return  generatePassword ()
+  return  generatedPassword
 };
 
 
@@ -92,5 +99,5 @@ function writePassword() {
 
 };
 
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
 
