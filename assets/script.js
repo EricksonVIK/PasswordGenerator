@@ -28,10 +28,11 @@ function generatePassword() {
   console.log("User chose " + length + " characters.");
   if (length < 8 || length > 128) {
     alert("Password must be between 8-128 characters!");
-    generatePassword();
-  }else{
-    alert("Chose your inputs.")
-    }
+    // return stops function and sends back to beginning
+    // without return, the function will repeat until the 
+    // bad input (number outside of parameter) is established 
+    return generatePassword();
+  }
 
   var symbolsConfirm = window.confirm("Would you like to use symbols?")
   if (symbolsConfirm){
@@ -80,7 +81,7 @@ function generatePassword() {
     console.log(generatedPassword);
     };
   // calling final password
-  return  generatedPassword
+    return  generatedPassword;
 };
 
 
