@@ -34,28 +34,28 @@ function generatePassword() {
     return generatePassword();
   }
 
-  var symbolsConfirm = window.confirm("Would you like to use symbols?")
+  var symbolsConfirm = window.confirm("Click OK to use symbols?")
   if (symbolsConfirm){
     // add symbols into the combined array
     passwordArray = passwordArray.concat(symbols)
     console.log("User confirmed symbols.")
   };
 
-  var upperConfirm = window.confirm("Would you like to use uppercase letters?")
+  var upperConfirm = window.confirm("Click OK to use uppercase letters?")
   if (upperConfirm){
     // add upper case into the combined array
     passwordArray=passwordArray.concat(upperCase)
     console.log("User confirmed Uppercase letters.")
   };
 
-  var lowerConfirm =window.confirm("Would you like to use lowercase letters?")
+  var lowerConfirm =window.confirm("Click OK to use lowercase letters?")
   if (lowerConfirm){
     // add lower case into the combined array
     passwordArray = passwordArray.concat(lowerCase)
     console.log("User confirmed Lowercase letters.")
   };
 
-  var numbersConfirm = window.confirm("Would you like to use numbers?")
+  var numbersConfirm = window.confirm("Click OK to use numbers?")
   if (numbersConfirm){
     // add numbers into the combined array
     passwordArray = passwordArray.concat(numbers)
